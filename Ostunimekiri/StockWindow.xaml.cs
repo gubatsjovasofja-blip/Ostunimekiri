@@ -17,6 +17,11 @@ namespace Ostunimekiri
             string uhik = cmbUhik.Text;
 
             lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
+
+            // Väljade puhastamine
+            txtToode.Clear();
+            txtKogus.Clear();
+            cmbUhik.SelectedIndex = -1;
         }
 
         // Toote kustutamine
