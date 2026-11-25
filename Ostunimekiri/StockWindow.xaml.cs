@@ -19,6 +19,15 @@ namespace Ostunimekiri
             lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
         }
 
+        // Toote kustutamine
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstVarud.SelectedItem != null)
+            {
+                lstVarud.Items.Remove(lstVarud.SelectedItem);
+            }
+        }
+
         // Tagasi peaaknasse
         private void Back_Click(object sender, RoutedEventArgs e)
         {
