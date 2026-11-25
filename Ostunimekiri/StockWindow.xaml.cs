@@ -16,6 +16,13 @@ namespace Ostunimekiri
             string kogus = txtKogus.Text;
             string uhik = cmbUhik.Text;
 
+            // Toote nime kontroll
+            if (toode.Trim() == "")
+            {
+                MessageBox.Show("Sisesta toote nimi!");
+                return;
+            }
+
             lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
 
             // Väljade puhastamine
