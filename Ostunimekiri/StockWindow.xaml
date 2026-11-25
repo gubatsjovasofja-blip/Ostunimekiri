@@ -1,22 +1,27 @@
 ﻿<Window x:Class="Ostunimekiri.StockWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Kodused varud" Height="550" Width="450">
+        Title="Kodused varud" Height="550" Width="450"
+        Background="#F3F6F0">
 
     <StackPanel Margin="20">
 
         <TextBlock Text="Kodused varud"
-                   FontSize="24"
+                   FontSize="26"
+                   Foreground="#344D38"
                    HorizontalAlignment="Center"
                    Margin="0,0,0,15"/>
 
-        <TextBlock Text="Toote nimi"/>
+        <TextBlock Text="Toote nimi"
+                   Foreground="#344D38"/>
         <TextBox x:Name="txtToode" Margin="0,5"/>
 
-        <TextBlock Text="Kogus"/>
+        <TextBlock Text="Kogus"
+                   Foreground="#344D38"/>
         <TextBox x:Name="txtKogus" Margin="0,5"/>
 
-        <TextBlock Text="Ühik"/>
+        <TextBlock Text="Ühik"
+                   Foreground="#344D38"/>
         <ComboBox x:Name="cmbUhik" Margin="0,5">
             <ComboBoxItem Content="tk"/>
             <ComboBoxItem Content="kg"/>
@@ -27,16 +32,23 @@
 
         <Button Content="Lisa toode"
                 Height="30" Margin="0,10"
+                Background="#DCE8D9"
+                Foreground="#344D38"
                 Click="Add_Click"/>
 
-        <ListBox x:Name="lstVarud" Height="130"/>
+        <ListBox x:Name="lstVarud"
+                 Height="130"
+                 Foreground="#344D38"/>
 
         <Button Content="Kustuta toode"
                 Height="30" Margin="0,10"
+                Background="#EBDDD9"
+                Foreground="#784D42"
                 Click="Delete_Click"/>
 
         <Button Content="Tagasi"
                 Height="30"
+                Background="#E5E5E5"
                 Click="Back_Click"/>
 
     </StackPanel>
