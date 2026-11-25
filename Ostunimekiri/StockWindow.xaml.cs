@@ -30,6 +30,13 @@ namespace Ostunimekiri
                 return;
             }
 
+            // Ühiku kontroll
+            if (cmbUhik.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vali ühik!");
+                return;
+            }
+
             lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
 
             // Väljade puhastamine
