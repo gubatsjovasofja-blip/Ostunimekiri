@@ -23,6 +23,13 @@ namespace Ostunimekiri
                 return;
             }
 
+            // Koguse kontroll
+            if (!decimal.TryParse(kogus, out decimal arv) || arv <= 0)
+            {
+                MessageBox.Show("Sisesta õige kogus!");
+                return;
+            }
+
             lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
 
             // Väljade puhastamine
