@@ -12,7 +12,8 @@
 
         <Button Content="Kodused varud"
                 Width="220" Height="40"
-                Margin="5"/>
+                Margin="5"
+                Click="OpenStock_Click"/>
 
         <Button Content="Ostunimekiri"
                 Width="220" Height="40"
@@ -20,4 +21,3 @@
 
     </StackPanel>
 </Window>
-    
