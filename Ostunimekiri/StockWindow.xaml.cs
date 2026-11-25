@@ -1,12 +1,22 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Ostunimekiri
 {
     public partial class StockWindow : Window
     {
+        // Toodete nimekiri
+        private static List<string> varud = new List<string>();
+
         public StockWindow()
         {
             InitializeComponent();
+
+            // Olemasolevate toodete kuvamine
+            foreach (string toode in varud)
+            {
+                lstVarud.Items.Add(toode);
+            }
         }
 
         // Toote lisamine
@@ -37,7 +47,10 @@ namespace Ostunimekiri
                 return;
             }
 
-            lstVarud.Items.Add(toode + " - " + kogus + " " + uhik);
+            string kirje = toode + " - " + kogus + " " + uhik;
+
+            varud.Add(kirje);
+            lstVarud.Items.Add(kirje);
 
             // Väljade puhastamine
             txtToode.Clear();
@@ -48,9 +61,12 @@ namespace Ostunimekiri
         // Toote kustutamine
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (lstVarud.SelectedItem != null)
+            if (lstVarud.SelectedIndex != -1)
             {
-                lstVarud.Items.Remove(lstVarud.SelectedItem);
+                int index = lstVarud.SelectedIndex;
+
+                varud.RemoveAt(index);
+                lstVarud.Items.RemoveAt(index);
             }
             else
             {
