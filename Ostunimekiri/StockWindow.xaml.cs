@@ -52,6 +52,10 @@ namespace Ostunimekiri
             {
                 lstVarud.Items.Remove(lstVarud.SelectedItem);
             }
+            else
+            {
+                MessageBox.Show("Vali toode!");
+            }
         }
 
         // Tagasi peaaknasse
