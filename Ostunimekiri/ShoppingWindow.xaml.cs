@@ -18,5 +18,16 @@ namespace Ostunimekiri
         {
             ShoppingListBox.Items.Remove(ShoppingListBox.SelectedItem);
         }
+
+        private void MarkButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = ShoppingListBox.SelectedIndex;
+            string product = ShoppingListBox.Items[index].ToString();
+
+            if (!product.EndsWith(" (ostetud)"))
+            {
+                ShoppingListBox.Items[index] = product + " (ostetud)";
+            }
+        }
     }
 }

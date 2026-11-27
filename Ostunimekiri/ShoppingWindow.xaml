@@ -29,7 +29,8 @@
         <Button x:Name="MarkButton"
                 Content="Märgi ostetuks"
                 Height="30"
-                Margin="0,0,0,5"/>
+                Margin="0,0,0,5"
+                Click="MarkButton_Click"/>
 
         <Button x:Name="DeleteButton"
                 Content="Kustuta toode"
