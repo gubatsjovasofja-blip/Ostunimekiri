@@ -12,6 +12,7 @@ namespace Ostunimekiri
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             ShoppingListBox.Items.Add(ProductTextBox.Text);
+            ProductTextBox.Clear();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
