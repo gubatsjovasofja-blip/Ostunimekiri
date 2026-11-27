@@ -34,8 +34,14 @@ namespace Ostunimekiri
 
         private void MarkButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ShoppingListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Palun vali toode!");
+                return;
+            }
+
             int index = ShoppingListBox.SelectedIndex;
-            string product = ShoppingListBox.Items[index].ToString();
+            string product = ShoppingListBox.Items[index].ToString() ?? "";
 
             if (!product.EndsWith(" (ostetud)"))
             {
