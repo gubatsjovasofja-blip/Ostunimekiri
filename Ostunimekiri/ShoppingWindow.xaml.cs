@@ -11,6 +11,12 @@ namespace Ostunimekiri
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(ProductTextBox.Text))
+            {
+                MessageBox.Show("Palun sisesta toote nimi!");
+                return;
+            }
+
             ShoppingListBox.Items.Add(ProductTextBox.Text);
             ProductTextBox.Clear();
         }
