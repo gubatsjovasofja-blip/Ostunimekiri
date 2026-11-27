@@ -1,12 +1,20 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Ostunimekiri
 {
     public partial class ShoppingWindow : Window
     {
+        private static List<string> products = new List<string>();
+
         public ShoppingWindow()
         {
             InitializeComponent();
+
+            foreach (string product in products)
+            {
+                ShoppingListBox.Items.Add(product);
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -17,6 +25,7 @@ namespace Ostunimekiri
                 return;
             }
 
+            products.Add(ProductTextBox.Text);
             ShoppingListBox.Items.Add(ProductTextBox.Text);
             ProductTextBox.Clear();
         }
@@ -29,7 +38,10 @@ namespace Ostunimekiri
                 return;
             }
 
-            ShoppingListBox.Items.Remove(ShoppingListBox.SelectedItem);
+            int index = ShoppingListBox.SelectedIndex;
+
+            products.RemoveAt(index);
+            ShoppingListBox.Items.RemoveAt(index);
         }
 
         private void MarkButton_Click(object sender, RoutedEventArgs e)
@@ -41,11 +53,12 @@ namespace Ostunimekiri
             }
 
             int index = ShoppingListBox.SelectedIndex;
-            string product = ShoppingListBox.Items[index].ToString() ?? "";
+            string product = products[index];
 
             if (!product.EndsWith(" (ostetud)"))
             {
-                ShoppingListBox.Items[index] = product + " (ostetud)";
+                products[index] = product + " (ostetud)";
+                ShoppingListBox.Items[index] = products[index];
             }
         }
 
