@@ -48,5 +48,10 @@ namespace Ostunimekiri
                 ShoppingListBox.Items[index] = product + " (ostetud)";
             }
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

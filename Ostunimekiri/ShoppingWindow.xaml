@@ -40,7 +40,8 @@
 
         <Button x:Name="BackButton"
                 Content="Tagasi"
-                Height="30"/>
+                Height="30"
+                Click="BackButton_Click"/>
 
     </StackPanel>
 
