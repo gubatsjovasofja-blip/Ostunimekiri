@@ -23,6 +23,12 @@ namespace Ostunimekiri
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ShoppingListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Palun vali toode!");
+                return;
+            }
+
             ShoppingListBox.Items.Remove(ShoppingListBox.SelectedItem);
         }
 
