@@ -13,5 +13,10 @@ namespace Ostunimekiri
         {
             ShoppingListBox.Items.Add(ProductTextBox.Text);
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShoppingListBox.Items.Remove(ShoppingListBox.SelectedItem);
+        }
     }
 }

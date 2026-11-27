@@ -34,7 +34,8 @@
         <Button x:Name="DeleteButton"
                 Content="Kustuta toode"
                 Height="30"
-                Margin="0,0,0,5"/>
+                Margin="0,0,0,5"
+                Click="DeleteButton_Click"/>
 
         <Button x:Name="BackButton"
                 Content="Tagasi"
